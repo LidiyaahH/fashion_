@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fashion Notes — a modern fashion journal exploring Sustainable Fashion, Quiet Luxury, Genderless Fashion, and Nostalgia & Retro.">
+  <title>Fashion Notes | A Journal of Modern Fashion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #211d1a;
+      --bg-soft: #2b2521;
+      --card: #302924;
+      --cream: #f5eee5;
+      --muted: #c8b9aa;
+      --gold: #c9a77b;
+      --line: rgba(245, 238, 229, .16);
+      --shadow: 0 20px 60px rgba(0,0,0,.28);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(201,167,123,.10), transparent 28%),
+        radial-gradient(circle at 85% 35%, rgba(255,255,255,.04), transparent 24%),
+        var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(33,29,26,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-mark {
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font: italic 600 27px/1 "Playfair Display", serif;
+      letter-spacing: -.5px;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: #eee4d9;
+      font-size: 14px;
+      transition: .25s ease;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--cream);
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 610px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(rgba(33,29,26,.48), rgba(33,29,26,.88)),
+        url("images/sustainable-fashion.jpg") center 25% / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(20,17,15,.72), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 40px), var(--max));
+      padding: 110px 0 90px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(48px, 7vw, 88px);
+      margin: 0 0 25px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #ddd0c2;
+      font-size: 16px;
+      margin: 0 0 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 23px;
+      background: var(--cream);
+      color: #201b18;
+      border: 1px solid var(--cream);
+      font-size: 13px;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--cream);
+    }
+
+    /* INTRO */
+    .intro {
+      padding: 105px 0 55px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      margin: 0 auto 20px;
+    }
+
+    .intro p {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* CATEGORY CARDS */
+    .categories {
+      padding: 30px 0 100px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .category-card img {
+      position: absolute;
+      inset: 0;
+      transition: transform .6s ease;
+    }
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 20%, rgba(18,15,13,.92) 94%);
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 23px;
+    }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .card-content h3 {
+      font-size: 28px;
+      margin: 0 0 7px;
+    }
+
+    .card-content p {
+      color: #d7cbbf;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* BLOG POSTS */
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 44px;
+      margin: 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .posts {
+      padding: 20px 0 100px;
+    }
+
+    .post {
+      display: grid;
+      grid-template-columns: minmax(320px, .9fr) 1.1fr;
+      min-height: 430px;
+      margin-bottom: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .post:nth-child(even) {
+      grid-template-columns: 1.1fr minmax(320px, .9fr);
+    }
+
+    .post:nth-child(even) .post-image {
+      order: 2;
+    }
+
+    .post-image {
+      min-height: 430px;
+      overflow: hidden;
+    }
+
+    .post-image img {
+      transition: transform .6s ease;
+    }
+
+    .post:hover .post-image img {
+      transform: scale(1.035);
+    }
+
+    .post-body {
+      padding: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .label {
+      width: fit-content;
+      color: var(--gold);
+      border: 1px solid rgba(201,167,123,.45);
+      padding: 5px 10px;
+      font-size: 10px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .post-body h3 {
+      font-size: clamp(34px, 4vw, 50px);
+      margin: 0 0 17px;
+    }
+
+    .post-body p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 0 23px;
+    }
+
+    .read-more {
+      color: var(--cream);
+      font-size: 13px;
+      width: fit-content;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+    }
+
+    /* CATEGORIES FILTER */
+    .filter-section {
+      padding: 20px 0 100px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 25px;
+    }
+
+    .filter-btn {
+      padding: 10px 16px;
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--cream);
+      color: #201b18;
+      border-color: var(--cream);
+    }
+
+    .filter-message {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 0 100px;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 55px;
+      margin: 0;
+    }
+
+    .about p {
+      color: var(--muted);
+    }
+
+    .about-box {
+      border-left: 1px solid var(--gold);
+      padding-left: 30px;
+    }
+
+    /* COMMENTS */
+    .comments {
+      padding: 80px 0 100px;
+      background: #1c1917;
+      border-top: 1px solid var(--line);
+    }
+
+    .comment-form {
+      max-width: 760px;
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .field {
+      width: 100%;
+      padding: 14px 16px;
+      color: var(--cream);
+      background: #292420;
+      border: 1px solid var(--line);
+      outline: none;
+    }
+
+    .field:focus {
+      border-color: var(--gold);
+    }
+
+    textarea.field {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .comments-list {
+      margin-top: 35px;
+      display: grid;
+      gap: 12px;
+      max-width: 760px;
+    }
+
+    .comment {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: #25211e;
+    }
+
+    .comment strong {
+      color: var(--cream);
+    }
+
+    .comment small {
+      color: var(--gold);
+      margin-left: 7px;
+    }
+
+    .comment p {
+      color: var(--muted);
+      margin: 7px 0 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 45px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .top-link {
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* LIGHT MODE */
+    body.light {
+      --bg: #f4eee7;
+      --bg-soft: #ebe1d7;
+      --card: #ddd1c4;
+      --cream: #2b2521;
+      --muted: #665b52;
+      --gold: #98734b;
+      --line: rgba(43,37,33,.15);
+    }
+
+    body.light header {
+      background: rgba(244,238,231,.94);
+    }
+
+    body.light .hero {
+      background:
+        linear-gradient(rgba(244,238,231,.20), rgba(244,238,231,.70)),
+        url("images/sustainable-fashion.jpg") center 25% / cover no-repeat;
+    }
+
+    body.light .comments {
+      background: #e9dfd5;
+    }
+
+    body.light .field,
+    body.light .comment {
+      background: #f4eee7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      nav ul { gap: 17px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .post,
+      .post:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+      .post:nth-child(even) .post-image {
+        order: 0;
+      }
+      .post-image { min-height: 460px; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    @media (max-width: 720px) {
+      .container,
+      .hero-content {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 23px;
+      }
+
+      .brand-sub {
+        font-size: 8px;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero-content {
+        padding: 80px 0 60px;
+      }
+
+      .intro {
+        padding-top: 75px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 480px;
+      }
+
+      .post-body {
+        padding: 35px 25px;
+      }
+
+      .post-image {
+        min-height: 430px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 12px;
+      }
+
+      .about h2 {
+        font-size: 43px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-inner p {
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Fashion Notes Home">
+        <span class="brand-mark">✿</span>
+        <div>
+          <div class="brand-name">Fashion Notes</div>
+          <div class="brand-sub">Your Everyday Style Guide</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle light mode">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Discover Your Signature</div>
+        <h1>A Journal of Modern Fashion</h1>
+        <p>
+          From thoughtful essentials to nostalgic statements, explore fashion
+          through four distinctive perspectives: conscious, refined, inclusive,
+          and timeless.
+        </p>
+        <a href="#blog" class="button">Explore Our Blog <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="intro container">
+      <div class="eyebrow">The Edit</div>
+      <h2>Style, with intention.</h2>
+      <p>
+        Fashion Notes is a simple fashion journal created to explore how
+        clothing reflects identity, culture, creativity, and changing
+        lifestyles.
+      </p>
+    </section>
+
+    <!-- ================= FOUR CATEGORIES ================= -->
+    <section class="categories container" id="categories">
+      <div class="category-grid">
+
+        <a class="category-card" href="#sustainable">
+          <img src="images/sustainable-fashion.jpg"
+               alt="Model wearing an earthy patchwork sustainable fashion outfit">
+          <div class="card-content">
+            <div class="card-number">01 / CONSCIOUS STYLE</div>
+            <h3>Sustainable Fashion</h3>
+            <p>Style with a purpose →</p>
+          </div>
+        </a>
+
+        <a class="category-card" href="#quiet-luxury">
+          <img src="images/quiet-luxury.jpg"
+               alt="Woman wearing an elegant neutral quiet luxury outfit">
+          <div class="card-content">
+            <div class="card-number">02 / TIMELESS ELEGANCE</div>
+            <h3>Quiet Luxury</h3>
+            <p>Less, but better →</p>
+          </div>
+        </a>
+
+        <a class="category-card" href="#genderless">
+          <img src="images/genderless-fashion.jpg"
+               alt="Two models wearing modern genderless fashion">
+          <div class="card-content">
+            <div class="card-number">03 / BE YOURSELF</div>
+            <h3>Genderless Fashion</h3>
+            <p>Style without limits →</p>
+          </div>
+        </a>
+
+        <a class="category-card" href="#nostalgia-retro">
+          <img src="images/nostalgia-retro.jpg"
+               alt="Woman wearing a vintage inspired retro outfit">
+          <div class="card-content">
+            <div class="card-number">04 / OLD MEETS NEW</div>
+            <h3>Nostalgia &amp; Retro</h3>
+            <p>A little vintage magic →</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ================= BLOG POSTS ================= -->
+    <section class="posts container" id="blog">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Latest Notes</div>
+          <h2>Four ways to see fashion.</h2>
+        </div>
+        <p>
+          Each entry has a label so readers can quickly explore the fashion
+          topic that interests them most.
+        </p>
+      </div>
+
+      <!-- POST 1 -->
+      <article class="post" id="sustainable" data-category="Sustainable Fashion">
+        <div class="post-image">
+          <img src="images/sustainable-fashion.jpg"
+               alt="Sustainable fashion runway look">
+        </div>
+        <div class="post-body">
+          <div class="label">Sustainable Fashion</div>
+          <h3>When fashion becomes more thoughtful.</h3>
+          <p>
+            Sustainable fashion encourages us to think beyond trends. Choosing
+            durable pieces, reusing clothing, supporting responsible production,
+            and reducing unnecessary consumption can make personal style more
+            conscious.
+          </p>
+          <a href="#comments" class="read-more">Read &amp; discuss →</a>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="post" id="quiet-luxury" data-category="Quiet Luxury">
+        <div class="post-image">
+          <img src="images/quiet-luxury.jpg"
+               alt="Quiet luxury neutral tailored fashion">
+        </div>
+        <div class="post-body">
+          <div class="label">Quiet Luxury</div>
+          <h3>The beauty of understated elegance.</h3>
+          <p>
+            Quiet luxury focuses on refined silhouettes, neutral colours,
+            quality-looking materials, and timeless styling rather than
+            prominent logos. Its appeal comes from simplicity and attention to
+            detail.
+          </p>
+          <a href="#comments" class="read-more">Read &amp; discuss →</a>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="post" id="genderless" data-category="Genderless Fashion">
+        <div class="post-image">
+          <img src="images/genderless-fashion.jpg"
+               alt="Genderless fashion styling with two models">
+        </div>
+        <div class="post-body">
+          <div class="label">Genderless Fashion</div>
+          <h3>Style beyond traditional labels.</h3>
+          <p>
+            Genderless fashion explores clothing as a form of personal
+            expression rather than something limited by traditional gender
+            categories. Oversized silhouettes, relaxed tailoring, denim, and
+            neutral basics can be styled in many different ways.
+          </p>
+          <a href="#comments" class="read-more">Read &amp; discuss →</a>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="post" id="nostalgia-retro" data-category="Nostalgia & Retro">
+        <div class="post-image">
+          <img src="images/nostalgia-retro.jpg"
+               alt="Vintage inspired nostalgia and retro fashion">
+        </div>
+        <div class="post-body">
+          <div class="label">Nostalgia &amp; Retro</div>
+          <h3>When the past inspires the present.</h3>
+          <p>
+            Retro fashion brings older aesthetics into a modern wardrobe.
+            Polka dots, classic blouses, structured skirts, vintage accessories,
+            and familiar silhouettes can create an outfit that feels nostalgic
+            while still looking fresh.
+          </p>
+          <a href="#comments" class="read-more">Read &amp; discuss →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= CATEGORY FILTER ================= -->
+    <section class="filter-section container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Browse by Label</div>
+          <h2>Find your style.</h2>
+        </div>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Sustainable Fashion">Sustainable Fashion</button>
+        <button class="filter-btn" data-filter="Quiet Luxury">Quiet Luxury</button>
+        <button class="filter-btn" data-filter="Genderless Fashion">Genderless Fashion</button>
+        <button class="filter-btn" data-filter="Nostalgia & Retro">Nostalgia &amp; Retro</button>
+      </div>
+
+      <div class="filter-message" id="filterMessage">
+        Showing all four blog entries.
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">About Fashion Notes</div>
+          <h2>A simple blog for a stylish point of view.</h2>
+        </div>
+
+        <div class="about-box">
+          <p>
+            Fashion Notes is a student-created static blog designed to share
+            fashion ideas in an elegant and accessible format. The blog can
+            also support a fashion business by introducing products, building
+            brand awareness, sharing styling inspiration, and directing readers
+            toward products or services.
+          </p>
+          <p>
+            For a real business, the website could be expanded with product
+            pages, shopping links, analytics, newsletters, social media
+            integration, and a proper customer comment system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMMENTS ================= -->
+    <section class="comments" id="comments">
+      <div class="container">
+        <div class="eyebrow">Community Notes</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:48px;margin:0 0 10px;">
+          What do you think?
+        </h2>
+        <p style="color:var(--muted);max-width:650px;margin:0;">
+          This static demo includes a browser-based comment feature. Comments
+          are stored locally in the visitor's browser.
+        </p>
+
+        <form class="comment-form" id="commentForm">
+          <input class="field" id="commentName" type="text"
+                 placeholder="Your name" maxlength="40" required>
+
+          <textarea class="field" id="commentText"
+                    placeholder="Share your thoughts about the fashion styles..."
+                    maxlength="500" required></textarea>
+
+          <button class="button" type="submit">Post Comment →</button>
+        </form>
+
+        <div class="comments-list" id="commentsList"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="about" id="contact">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Let's talk fashion.</h2>
+        </div>
+
+        <div class="about-box">
+          <p>
+            Have a style idea, blog suggestion, or collaboration concept?
+            Fashion Notes is open to conversations about fashion, creativity,
+            and digital content.
+          </p>
+          <a class="read-more" href="mailto:fashionnotes@example.com">
+            fashionnotes@example.com →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Fashion Notes. Created as a student blog project.</p>
+      <a href="#top" class="top-link">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // LIGHT / DARK MODE
+    const themeBtn = document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      themeBtn.textContent =
+        document.body.classList.contains("light") ? "☀" : "☾";
+    });
+
+    // SIMPLE SEARCH
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      const query = prompt(
+        "Search Fashion Notes:",
+        ""
+      );
+
+      if (!query) return;
+
+      const posts = [...document.querySelectorAll(".post")];
+      const result = posts.find(post =>
+        post.innerText.toLowerCase().includes(query.toLowerCase())
+      );
+
+      if (result) {
+        result.scrollIntoView({ behavior: "smooth", block: "center" });
+        result.style.outline = "2px solid #c9a77b";
+
+        setTimeout(() => {
+          result.style.outline = "";
+        }, 1800);
+      } else {
+        alert("No matching fashion note was found.");
+      }
+    });
+
+    // CATEGORY FILTER
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const posts = document.querySelectorAll(".post");
+    const filterMessage = document.getElementById("filterMessage");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+        let visible = 0;
+
+        posts.forEach(post => {
+          const match =
+            filter === "all" || post.dataset.category === filter;
+
+          post.style.display = match ? "grid" : "none";
+          if (match) visible++;
+        });
+
+        filterMessage.textContent =
+          filter === "all"
+            ? "Showing all four blog entries."
+            : `Showing ${visible} blog entry${visible !== 1 ? "ies" : ""} for ${filter}.`;
+      });
+    });
+
+    // LOCAL COMMENT DEMO
+    const commentForm = document.getElementById("commentForm");
+    const commentsList = document.getElementById("commentsList");
+
+    function loadComments() {
+      const comments =
+        JSON.parse(localStorage.getItem("fashionNotesComments")) || [];
+
+      commentsList.innerHTML = "";
+
+      if (comments.length === 0) {
+        commentsList.innerHTML =
+          '<div class="comment"><p>No comments yet. Be the first to share your thoughts.</p></div>';
+        return;
+      }
+
+      comments.forEach(comment => {
+        const item = document.createElement("div");
+        item.className = "comment";
+        item.innerHTML = `
+          <strong>${escapeHTML(comment.name)}</strong>
+          <small>${escapeHTML(comment.date)}</small>
+          <p>${escapeHTML(comment.text)}</p>
+        `;
+        commentsList.appendChild(item);
+      });
+    }
+
+    function escapeHTML(value) {
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    commentForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("commentName").value.trim();
+      const text = document.getElementById("commentText").value.trim();
+
+      if (!name || !text) return;
+
+      const comments =
+        JSON.parse(localStorage.getItem("fashionNotesComments")) || [];
+
+      comments.unshift({
+        name,
+        text,
+        date: new Date().toLocaleDateString("en-GB")
+      });
+
+      localStorage.setItem(
+        "fashionNotesComments",
+        JSON.stringify(comments)
+      );
+
+      commentForm.reset();
+      loadComments();
+    });
+
+    loadComments();
+  </script>
+
+</body>
+</html>
